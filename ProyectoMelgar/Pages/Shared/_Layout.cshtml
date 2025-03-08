@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiservicios Melgar</title>
+    <link rel="stylesheet" href="~/css/site.css" /> <!-- Cambiado a site.css -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="~/images/loog.jpg" alt="Logo Melgar" />
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/nosotros">Nosotros</a></li>
+                <li><a href="/productos">Productos</a></li>
+                <li><a href="/catalogo">Catálogo</a></li>
+                <li><a href="/catalogo-equipo-pesado">Catálogo Equipo Pesado</a></li>
+                <li><a href="/noticias">Noticias</a></li>
+                <li><a href="/videos">Videos</a></li>
+                <li><a href="/descargas">Descargas</a></li>
+                <li><a href="/inventario">Inventario</a></li> <!-- Nueva opción -->
+                <li><a href="/historial">Historial</a></li> <!-- Nueva opción -->
+                <li><a href="/contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Buscador -->
+    <div class="search-bar">
+        <form action="/buscar" method="get">
+            <select name="ano">
+                <option value="">Año</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+            </select>
+            <select name="marca">
+                <option value="">Marca</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Ford">Ford</option>
+                <option value="Chevrolet">Chevrolet</option>
+            </select>
+            <select name="modelo">
+                <option value="">Modelo</option>
+                <option value="A60">A60</option>
+                <option value="B45">B45</option>
+                <option value="C30">C30</option>
+            </select>
+            <select name="motor">
+                <option value="">Motor</option>
+                <option value="1.6L">1.6L</option>
+                <option value="2.0L">2.0L</option>
+                <option value="2.5L">2.5L</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        @RenderBody()
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Multiservicios Melgar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
