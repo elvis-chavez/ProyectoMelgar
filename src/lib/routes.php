@@ -48,7 +48,8 @@ $router->get('/profile', function() {
 });
 
 $router->get('/logout', function() {
-    echo 'inicio7';
+    unset($_SESSION['user']);
+    header('Location: /multiservicios-melgar2/login');
 });
 
 $router->get('/profile/{username}', function($username) {
