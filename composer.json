@@ -1,0 +1,21 @@
+{
+    "name": "jose/multiservicios-melgar",
+    "description": "Sistema de gestion de repuestos de Multiservicios Melgar",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "5.6.x-dev",
+        "bramus/router": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jose\\MultiserviciosMelgar\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jose",
+            "email": "jeduramos7001@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
