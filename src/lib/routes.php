@@ -1,6 +1,7 @@
 <?php
 use Jose\MultiserviciosMelgar\controllers\SignupController;
 use Jose\MultiserviciosMelgar\controllers\LoginController;
+use Jose\MultiserviciosMelgar\controllers\HomeController;
 
 $router = new \Bramus\Router\Router();
 session_start();
@@ -37,7 +38,9 @@ $router->post('/register', function() {
 });
 
 $router->get('/home', function() {
-    echo 'Home';
+    $user = unserialize($_SESSION['user']);
+    $controller = new HomeController($user);
+    $controller->index();
 });
 
 $router->get('/profile', function() {
@@ -45,7 +48,8 @@ $router->get('/profile', function() {
 });
 
 $router->get('/logout', function() {
-    echo 'inicio7';
+    unset($_SESSION['user']);
+    header('Location: /multiservicios-melgar2/login');
 });
 
 $router->get('/profile/{username}', function($username) {
