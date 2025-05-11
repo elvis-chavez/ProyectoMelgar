@@ -60,7 +60,7 @@ $router->get('/profile/{username}', function($username) {
 $router->get('/provider', function() {
     $user = unserialize($_SESSION['user']);
     $controller = new ProviderController($user);
-    $controller->render('provider/index');
+    $controller->getProviders();
 });
 
 $router->run();
