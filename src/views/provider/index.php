@@ -23,7 +23,7 @@
         ?>
 
             <div class="">
-                <table>
+                <table class="table table-striped">
                     <thead>
                         <th>Id</th>
                         <th>Proveedor</th>
