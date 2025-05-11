@@ -1,8 +1,8 @@
 <?php
-use Jose\MultiserviciosMelgar\controllers\SignupController;
-use Jose\MultiserviciosMelgar\controllers\LoginController;
-use Jose\MultiserviciosMelgar\controllers\HomeController;
-use Jose\MultiserviciosMelgar\controllers\ProviderController;
+use Jose\ProyectoMelgar\controllers\SignupController;
+use Jose\ProyectoMelgar\controllers\LoginController;
+use Jose\ProyectoMelgar\controllers\HomeController;
+use Jose\ProyectoMelgar\controllers\ProviderController;
 
 $router = new \Bramus\Router\Router();
 session_start();
@@ -50,7 +50,7 @@ $router->get('/profile', function() {
 
 $router->get('/logout', function() {
     unset($_SESSION['user']);
-    header('Location: /multiservicios-melgar2/login');
+    header('Location: /ProyectoMelgar/login');
 });
 
 $router->get('/profile/{username}', function($username) {
