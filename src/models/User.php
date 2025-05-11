@@ -1,9 +1,9 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\models;
+namespace Jose\ProyectoMelgar\models;
 
-use Jose\MultiserviciosMelgar\lib\Database;
-use Jose\MultiserviciosMelgar\lib\Model;
+use Jose\ProyectoMelgar\lib\Database;
+use Jose\ProyectoMelgar\lib\Model;
 
 use PDO;
 use PDOException;
