@@ -6,7 +6,7 @@
     <title>Signup Form</title>
 </head>
 <body>
-    <form action="/multiservicios-melgar2/register" method="POST">
+    <form action="/ProyectoMelgar/register" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="text" name="lastname" placeholder="Lastname" required>
         <input type="text" name="password" placeholder="Password" required>
