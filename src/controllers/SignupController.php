@@ -21,7 +21,7 @@ class SignupController extends Controller {
         $email = $this->post('email');
         $phone = $this->post('phone');
         $birthdate = $this->post('birthdate');
-        
+
         if (
             !is_null($username) &&
             !is_null($lastname) &&
@@ -35,7 +35,7 @@ class SignupController extends Controller {
             );
 
             $user->save();
-            header('Location: /multiservicios-melgar2/login');
+            header('location: /ProyectoMelgar/login');
         } else {
             $this->render('errors/index');
         }
