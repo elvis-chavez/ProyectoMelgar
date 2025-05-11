@@ -1,8 +1,8 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\lib;
+namespace Jose\ProyectoMelgar\lib;
 
-use Jose\MultiserviciosMelgar\lib\View;
+use Jose\ProyectoMelgar\lib\View;
 
 /**
  * Clase Controller
