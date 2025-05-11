@@ -1,9 +1,9 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\controllers;
+namespace Jose\ProyectoMelgar\controllers;
 
-use Jose\MultiserviciosMelgar\lib\Controller;
-use Jose\MultiserviciosMelgar\models\User;
+use Jose\ProyectoMelgar\lib\Controller;
+use Jose\ProyectoMelgar\models\User;
 
 class SignupController extends Controller {
     public function __construct() {
@@ -35,7 +35,7 @@ class SignupController extends Controller {
             );
 
             $user->save();
-            header('Location: /ProyectoMelgar/login');
+            header('location: /ProyectoMelgar/login');
         } else {
             $this->render('errors/index');
         }
