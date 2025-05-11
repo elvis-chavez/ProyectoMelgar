@@ -102,15 +102,34 @@ class Provider extends Model {
 
             $data = $query->fetch(PDO::FETCH_ASSOC);
 
-            $user = new Provider();
-            $user->setId($data['prov_id']);
-            $user->setName($data['prov_name']);
-            $user->setContact($data['prov_contact']);
+            $provider = new Provider();
+            $provider->setId($data['prov_id']);
+            $provider->setName($data['prov_name']);
+            $provider->setContact($data['prov_contact']);
 
-            return $user;
+            return $provider;
         } catch (PDOException $e) {
             error_log($e->getMessage());
             return NULL;
+        }
+    }
+
+    public static function update(Provider $provider): bool {
+        try {
+            $db = new Database();
+            $query = $db->connect()->prepare(
+                "UPDATE provider SET prov_name = :name, prov_contact = :contact WHERE prov_id = :id"
+            );
+            $query->execute([
+                'name' => $provider->getName(),
+                'contact' => $provider->getContact(),
+                'id' => $provider->getId()
+            ]);
+
+            return true;
+        } catch (PDOException $e) {
+            error_log($e->getMessage());
+            return false;
         }
     }
 

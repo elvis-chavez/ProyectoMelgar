@@ -57,10 +57,35 @@ $router->get('/profile/{username}', function($username) {
     echo 'inicio8';
 });
 
+// Rutas para el CRUD de proveedores
 $router->get('/provider', function() {
     $user = unserialize($_SESSION['user']);
     $controller = new ProviderController($user);
     $controller->getProviders();
+});
+
+$router->get('/provider/form', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new ProviderController($user);
+    $controller->getForm();
+});
+
+$router->post('/provider/register', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new ProviderController($user);
+    $controller->createProvider();
+});
+
+$router->get('/provider/edit/{id}', function($id) {
+    $user = unserialize($_SESSION['user']);
+    $controller = new ProviderController($user);
+    $controller->editForm($id);
+});
+
+$router->post('/provider/update', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new ProviderController($user);
+    $controller->updateProvider();
 });
 
 $router->run();
