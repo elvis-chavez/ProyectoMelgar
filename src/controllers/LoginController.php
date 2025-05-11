@@ -1,6 +1,6 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\controllers;
+namespace Jose\ProyectoMelgar\controllers;
 
 use Jose\ProyectoMelgar\lib\Controller;
 use Jose\ProyectoMelgar\models\User;
