@@ -1,8 +1,8 @@
 <?php
-namespace Jose\MultiserviciosMelgar\controllers;
+namespace Jose\ProyectoMelgar\controllers;
 
-use Jose\MultiserviciosMelgar\lib\Controller;
-use Jose\MultiserviciosMelgar\models\User;
+use Jose\ProyectoMelgar\lib\Controller;
+use Jose\ProyectoMelgar\models\User;
 
 class HomeController extends Controller {
 
