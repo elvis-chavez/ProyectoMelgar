@@ -1,14 +1,10 @@
 {
-    "name": "jose/multiservicios-melgar",
+    "name": "jose/proyecto-melgar",
     "description": "Sistema de gestion de repuestos de Multiservicios Melgar",
     "type": "project",
-    "require": {
-        "vlucas/phpdotenv": "5.6.x-dev",
-        "bramus/router": "^1.6"
-    },
     "autoload": {
         "psr-4": {
-            "Jose\\PoryectoMelgar\\": "src/"
+            "Jose\\ProyectoMelgar\\": "src/"
         }
     },
     "authors": [
@@ -17,5 +13,9 @@
             "email": "jeduramos7001@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "require": {
+        "vlucas/phpdotenv": "^5.6@dev",
+        "bramus/router": "dev-master"
+    }
 }

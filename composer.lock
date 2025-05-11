@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f45017a9f4d941934079a08c6d98b73f",
+    "content-hash": "8e9f110da42be18f3a935974cd95b65c",
     "packages": [
         {
             "name": "bramus/router",
-            "version": "1.6.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bramus/router.git",
-                "reference": "55657b76da8a0a509250fb55b9dd24e1aa237eba"
+                "reference": "8e1d3875b196524bd4c283f18315d873420d9c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bramus/router/zipball/55657b76da8a0a509250fb55b9dd24e1aa237eba",
-                "reference": "55657b76da8a0a509250fb55b9dd24e1aa237eba",
+                "url": "https://api.github.com/repos/bramus/router/zipball/8e1d3875b196524bd4c283f18315d873420d9c28",
+                "reference": "8e1d3875b196524bd4c283f18315d873420d9c28",
                 "shasum": ""
             },
             "require": {
@@ -28,6 +28,7 @@
                 "phpunit/php-code-coverage": "~2.0",
                 "phpunit/phpunit": "~4.8"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -53,9 +54,15 @@
             ],
             "support": {
                 "issues": "https://github.com/bramus/router/issues",
-                "source": "https://github.com/bramus/router/tree/1.6.1"
+                "source": "https://github.com/bramus/router/tree/master"
             },
-            "time": "2021-11-18T19:24:07+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/bramus",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-29T14:04:27+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -533,7 +540,7 @@
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
-    "platform-dev": {},
+    "platform": [],
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }

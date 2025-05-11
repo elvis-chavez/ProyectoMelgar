@@ -14,6 +14,6 @@ class ProviderController extends Controller {
 
     public function getProviders() {
         $providers = new Provider();
-        $this->render('provider/index', ['user' => $this->user, 'providers' => $providers]);
+        $this->render('provider/index', ['user' => $this->user, 'providers' => $providers->getAll()]);
     }
 }
