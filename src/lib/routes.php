@@ -2,6 +2,7 @@
 use Jose\MultiserviciosMelgar\controllers\SignupController;
 use Jose\MultiserviciosMelgar\controllers\LoginController;
 use Jose\MultiserviciosMelgar\controllers\HomeController;
+use Jose\MultiserviciosMelgar\controllers\ProviderController;
 
 $router = new \Bramus\Router\Router();
 session_start();
@@ -54,6 +55,12 @@ $router->get('/logout', function() {
 
 $router->get('/profile/{username}', function($username) {
     echo 'inicio8';
+});
+
+$router->get('/provider', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new ProviderController($user);
+    $controller->render('provider/index');
 });
 
 $router->run();
