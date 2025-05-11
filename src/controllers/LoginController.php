@@ -25,16 +25,16 @@ class LoginController extends Controller {
                     $_SESSION['user'] = serialize($user);
                     // Redirigimos al usuario a la página de inicio
                     error_log('Usuario autenticado');
-                    header('Location: /multiservicios-melgar2/home');
+                    header('Location: /ProyectoMelgar/home');
                 } else {
                     // Si las credenciales son incorrectas, redirigimos al login
                     error_log('Credenciales incorrectas');
-                    header('Location: /multiservicios-melgar2/login');
+                    header('Location: /ProyectoMelgar/login');
                 }
             } else {
                 // Usuario no encontrado
                 error_log('Usuario no encontrado');
-                header('Location: /multiservicios-melgar2/login');
+                header('Location: /ProyectoMelgar/login');
             }
         } else {
             error_log('Datos de login incompletos');
