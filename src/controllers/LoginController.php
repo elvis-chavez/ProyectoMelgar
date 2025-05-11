@@ -2,8 +2,8 @@
 
 namespace Jose\MultiserviciosMelgar\controllers;
 
-use Jose\MultiserviciosMelgar\lib\Controller;
-use Jose\MultiserviciosMelgar\models\User;
+use Jose\ProyectoMelgar\lib\Controller;
+use Jose\ProyectoMelgar\models\User;
 
 class LoginController extends Controller {
     public function __construct() {
