@@ -21,13 +21,7 @@ class SignupController extends Controller {
         $email = $this->post('email');
         $phone = $this->post('phone');
         $birthdate = $this->post('birthdate');
-
-        // Aquí puedes agregar la lógica para guardar el usuario en la base de datos
-        // Por ejemplo, usando un modelo de usuario
-        // $userModel = new UserModel();
-        // $userModel->create($username, $email, $password);
         
-        // Redirigir a la página de inicio o mostrar un mensaje de éxito
         if (
             !is_null($username) &&
             !is_null($lastname) &&
