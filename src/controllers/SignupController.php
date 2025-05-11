@@ -35,7 +35,7 @@ class SignupController extends Controller {
             );
 
             $user->save();
-            header('location: /ProyectoMelgar/login');
+            header('Location: /ProyectoMelgar/login');
         } else {
             $this->render('errors/index');
         }
