@@ -1,20 +1,43 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\models;
+namespace Jose\ProyectoMelgar\models;
 
-use Jose\MultiserviciosMelgar\lib\Database;
-use Jose\MultiserviciosMelgar\lib\Model;
+use Jose\ProyectoMelgar\lib\Database;
+use Jose\ProyectoMelgar\lib\Model;
 use PDO;
 use PDOException;
 
 class Provider extends Model {
     private int $id;
+    private string $name;
+    private string $contact;
 
-    public function __construct(
-        private string $name,
-        private string $contact,) {
+    public function __construct() {
         parent::__construct();
         $this->id = -1;
+    }
+
+    public function getAll(): array {
+        $providers = [];
+
+        try {
+            $query = $this->prepare("SELECT * FROM provider");
+            $query->execute([]);
+
+            while ($p = $query->fetch(PDO::FETCH_ASSOC)) {
+                $provider = new Provider();
+                $provider->setId($p['post_id']);
+                $provider->setName($p['prov_name']);
+                $provider->setContact($p['prov_contact']);
+
+                array_push($providers, $provider);
+            }
+
+            return $providers;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return [];
+        }
     }
 
     public function save() {
@@ -59,12 +82,10 @@ class Provider extends Model {
             $query->execute(['name' => $name]);
             
             $data = $query->fetch(PDO::FETCH_ASSOC);
-            $user = new Provider(
-                $data['prov_name'],
-                $data['prov_contact'],
-                
-            );
+            $user = new Provider();
             $user->setId($data['prov_id']);
+            $user->setName($data['prov_name']);
+            $user->setContact($data['prov_contact']);
 
             return $user;
         } catch (PDOException $e) {
