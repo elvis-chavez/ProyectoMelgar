@@ -1,9 +1,9 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\controllers;
+namespace Jose\ProyectoMelgar\controllers;
 
-use Jose\MultiserviciosMelgar\lib\Controller;
-use Jose\MultiserviciosMelgar\models\User;
+use Jose\ProyectoMelgar\lib\Controller;
+use Jose\ProyectoMelgar\models\User;
 
 class SignupController extends Controller {
     public function __construct() {
@@ -22,12 +22,6 @@ class SignupController extends Controller {
         $phone = $this->post('phone');
         $birthdate = $this->post('birthdate');
 
-        // Aquí puedes agregar la lógica para guardar el usuario en la base de datos
-        // Por ejemplo, usando un modelo de usuario
-        // $userModel = new UserModel();
-        // $userModel->create($username, $email, $password);
-        
-        // Redirigir a la página de inicio o mostrar un mensaje de éxito
         if (
             !is_null($username) &&
             !is_null($lastname) &&
@@ -41,7 +35,7 @@ class SignupController extends Controller {
             );
 
             $user->save();
-            header('Location: /multiservicios-melgar2/login');
+            header('location: /ProyectoMelgar/login');
         } else {
             $this->render('errors/index');
         }

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f45017a9f4d941934079a08c6d98b73f",
+    "content-hash": "8e9f110da42be18f3a935974cd95b65c",
     "packages": [
         {
             "name": "bramus/router",
-            "version": "1.6.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bramus/router.git",
-                "reference": "55657b76da8a0a509250fb55b9dd24e1aa237eba"
+                "reference": "8e1d3875b196524bd4c283f18315d873420d9c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bramus/router/zipball/55657b76da8a0a509250fb55b9dd24e1aa237eba",
-                "reference": "55657b76da8a0a509250fb55b9dd24e1aa237eba",
+                "url": "https://api.github.com/repos/bramus/router/zipball/8e1d3875b196524bd4c283f18315d873420d9c28",
+                "reference": "8e1d3875b196524bd4c283f18315d873420d9c28",
                 "shasum": ""
             },
             "require": {
@@ -28,6 +28,7 @@
                 "phpunit/php-code-coverage": "~2.0",
                 "phpunit/phpunit": "~4.8"
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -53,9 +54,15 @@
             ],
             "support": {
                 "issues": "https://github.com/bramus/router/issues",
-                "source": "https://github.com/bramus/router/tree/1.6.1"
+                "source": "https://github.com/bramus/router/tree/master"
             },
-            "time": "2021-11-18T19:24:07+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/bramus",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-07-29T14:04:27+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -258,7 +265,7 @@
                 "portable"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.31.0"
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -340,7 +347,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-mbstring/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-mbstring/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -421,7 +428,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/1.x"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.32.0"
             },
             "funding": [
                 {
@@ -445,12 +452,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "20d6a1bdfd62910da28b447b2ccb39ac542e96b2"
+                "reference": "24ac4c74f91ee2c193fa1aaa5c249cb0822809af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/20d6a1bdfd62910da28b447b2ccb39ac542e96b2",
-                "reference": "20d6a1bdfd62910da28b447b2ccb39ac542e96b2",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/24ac4c74f91ee2c193fa1aaa5c249cb0822809af",
+                "reference": "24ac4c74f91ee2c193fa1aaa5c249cb0822809af",
                 "shasum": ""
             },
             "require": {
@@ -510,7 +517,7 @@
             ],
             "support": {
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
-                "source": "https://github.com/vlucas/phpdotenv/tree/master"
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.6.2"
             },
             "funding": [
                 {
@@ -522,7 +529,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-16T09:40:23+00:00"
+            "time": "2025-04-30T23:37:27+00:00"
         }
     ],
     "packages-dev": [],

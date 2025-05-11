@@ -1,9 +1,9 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\models;
+namespace Jose\ProyectoMelgar\models;
 
-use Jose\MultiserviciosMelgar\lib\Database;
-use Jose\MultiserviciosMelgar\lib\Model;
+use Jose\ProyectoMelgar\lib\Database;
+use Jose\ProyectoMelgar\lib\Model;
 
 use PDO;
 use PDOException;
@@ -99,6 +99,45 @@ class User extends Model {
             error_log($e->getMessage());
             return NULL;
         }
+    }
+
+    public static function getById(string $user_id): User|null {
+        try {
+            $db = new Database();
+            $query = $db->connect()->prepare("SELECT * FROM users WHERE u_id = :user_id");
+            $query->execute(['user_id' => $user_id]);
+
+            $data = $query->fetch(PDO::FETCH_ASSOC);
+
+            $user = new User(
+                $data['u_name'],
+                $data['u_lastname'],
+                $data['u_password'],
+                $data['u_email'],
+                $data['u_phone_number'],
+                $data['u_birthdate']
+            );
+            $user->setId($data['user_id']);
+
+            return $user;
+        } catch (PDOException $e) {
+            error_log($e->getMessage());
+            return NULL;
+        }
+    }
+
+    public static function deleteById($user_id): bool {
+        try {
+            $db = new Database();
+            $query = $db->connect()->prepare("UPDATE users SET u_active = 0 WHERE u_id = :user_id");
+            $query->execute(['user_id' => $user_id]);
+
+            return true;
+        } catch (PDOException $e) {
+            error_log($e->getMessage());
+            return false;
+        }
+
     }
 
     public function comparePassword($password): bool {

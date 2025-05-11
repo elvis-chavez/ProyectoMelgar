@@ -1,6 +1,6 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\lib;
+namespace Jose\ProyectoMelgar\lib;
 
 class Model {
     private Database $db;

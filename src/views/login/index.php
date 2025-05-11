@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="/multiservicios-melgar2/auth" method="POST">
+    <form action="/ProyectoMelgar/auth" method="POST">
         <input type="text" name="username" placeholder="Username" required>
         <input type="text" name="password" placeholder="Password" required>
 

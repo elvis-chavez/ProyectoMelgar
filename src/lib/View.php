@@ -1,6 +1,6 @@
 <?php
 
-namespace Jose\MultiserviciosMelgar\lib;
+namespace Jose\ProyectoMelgar\lib;
 
 /**
  * Clase View
