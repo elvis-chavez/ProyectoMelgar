@@ -26,7 +26,7 @@ class Provider extends Model {
 
             while ($p = $query->fetch(PDO::FETCH_ASSOC)) {
                 $provider = new Provider();
-                $provider->setId($p['post_id']);
+                $provider->setId($p['prov_id']);
                 $provider->setName($p['prov_name']);
                 $provider->setContact($p['prov_contact']);
 
@@ -98,15 +98,14 @@ class Provider extends Model {
         try {
             $db = new Database();
             $query = $db->connect()->prepare("SELECT * FROM provider WHERE prov_id = :provider_id");
-            $query->execute(['user_id' => $provider_id]);
+            $query->execute(['provider_id' => $provider_id]);
 
             $data = $query->fetch(PDO::FETCH_ASSOC);
 
-            $user = new Provider(
-                $data['prov_name'],
-                $data['prov_contact'],
-            );
+            $user = new Provider();
             $user->setId($data['prov_id']);
+            $user->setName($data['prov_name']);
+            $user->setContact($data['prov_contact']);
 
             return $user;
         } catch (PDOException $e) {
