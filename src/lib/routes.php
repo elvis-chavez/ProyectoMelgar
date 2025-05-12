@@ -3,6 +3,7 @@ use Jose\ProyectoMelgar\controllers\SignupController;
 use Jose\ProyectoMelgar\controllers\LoginController;
 use Jose\ProyectoMelgar\controllers\HomeController;
 use Jose\ProyectoMelgar\controllers\ProviderController;
+use Jose\ProyectoMelgar\controllers\UserController;
 
 $router = new \Bramus\Router\Router();
 session_start();
@@ -55,6 +56,37 @@ $router->get('/logout', function() {
 
 $router->get('/profile/{username}', function($username) {
     echo 'inicio8';
+});
+
+// Rutas para el CRUD de usuarios
+$router->get('/users', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new UserController($user);
+    $controller->getUsers();
+});
+
+$router->get('/users/form', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new UserController($user);
+    $controller->getForm();
+});
+
+$router->post('/users/register', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new UserController($user);
+    $controller->createUser();
+});
+
+$router->get('/users/edit/{id}', function($id) {
+    $user = unserialize($_SESSION['user']);
+    $controller = new UserController($user);
+    $controller->editForm($id);
+});
+
+$router->post('/users/update', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new UserController($user);
+    $controller->updateUser();
 });
 
 // Rutas para el CRUD de proveedores
