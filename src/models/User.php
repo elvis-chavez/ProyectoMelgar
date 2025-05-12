@@ -4,7 +4,6 @@ namespace Jose\ProyectoMelgar\models;
 
 use Jose\ProyectoMelgar\lib\Database;
 use Jose\ProyectoMelgar\lib\Model;
-
 use PDO;
 use PDOException;
 
@@ -25,6 +24,30 @@ class User extends Model {
         $this->id = -1;
         $this->role_id = 1; // Rol por defecto
         $this->active = 1; // Activo por defecto
+    }
+
+    public static function getAll(): array {
+        $users = [];
+
+        try {
+            $db = new Database();
+            $query = $db->connect()->prepare("SELECT * FROM users WHERE u_active = 1");
+            $query->execute([]);
+
+            while ($u = $query->fetch(PDO::FETCH_ASSOC)) {
+                $user = new User($u['u_name'], $u['u_lastname'], $u['u_password'], $u['u_email'], $u['u_phone_number'], $u['u_birthdate']);
+                $user->setId($u['u_id']);
+                $user->setRoleId($u['u_role_id']);
+                $user->setActive($u['u_active']);
+
+                array_push($users, $user);
+            }
+
+            return $users;
+        } catch (PDOException $e) {
+            error_log($e->getMessage());
+            return [];
+        }
     }
 
     public function save() {
@@ -117,12 +140,43 @@ class User extends Model {
                 $data['u_phone_number'],
                 $data['u_birthdate']
             );
-            $user->setId($data['user_id']);
+            $user->setId($data['u_id']);
+            $user->setRoleId($data['u_role_id']);
+            $user->setActive($data['u_active']);
 
             return $user;
         } catch (PDOException $e) {
             error_log($e->getMessage());
             return NULL;
+        }
+    }
+
+    public function update(User $user) {
+        try {
+            $hash = $this->getHashedPassword($user->getPassword());
+            $db = new Database();
+            $query = $db->connect()->prepare(
+                "UPDATE users 
+                SET u_name = :name, u_lastname = :lastname, u_password = :pass, u_email = :email, u_phone_number = :phone, 
+                u_birthdate = :birthdate, u_role_id = :role, u_active = :active 
+                WHERE u_id = :id"
+            );
+            $query->execute([
+                'name' => $user->getUsername(),
+                'lastname' => $user->getLastname(),
+                'pass' => $hash,
+                'email' => $user->getEmail(),
+                'phone' => $user->getPhone(),
+                'birthdate' => $user->getBirthdate(),
+                'role' => $user->getRoleId(),
+                'active' => $user->getActive(),
+                'id' => $user->getId()
+            ]);
+
+            return true;
+        } catch (PDOException $e) {
+            error_log($e->getMessage());
+            return false;
         }
     }
 
