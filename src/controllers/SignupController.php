@@ -31,7 +31,7 @@ class SignupController extends Controller {
             !is_null($birthdate)
             ) {
             $user = new User(
-                $username, $lastname, $password,$email, $phone, $birthdate
+                $username, $lastname, $password, $email, $phone, $birthdate
             );
 
             $user->save();
