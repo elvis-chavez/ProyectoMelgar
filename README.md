@@ -33,3 +33,11 @@ composer install
 ### Configurar archivos necesarios
 
 Crear archivo `.env` en la raíz del proyecto (al mismo nivel del index).
+
+### Comprobar estado del proyecto
+
+Iniciamos Apache y MySQL, y colocamos el siguiente enlace en el navegador:
+
+```plaintext
+http://localhost/ProyectoMelgar/
+```
