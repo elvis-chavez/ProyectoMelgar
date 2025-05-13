@@ -18,7 +18,7 @@ La ruta de instalación por defecto de XAMPP es en el disco C, y el proyecto deb
 cd C:\xampp\htdocs
 ```
 
-Una vez ubicados dentro de la carpeta `htdocs/`, clonamos el repositorio con todas las ramas y commits:
+Una vez ubicados dentro de la carpeta `htdocs/`, clonamos el repositorio de GitHub con todas las ramas y commits:
 
 ```powershell
 git clone <enlace-al-repositorio>
