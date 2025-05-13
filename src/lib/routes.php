@@ -17,8 +17,7 @@ $dotenv->safeLoad();
  */
 
 $router->get('/', function() {
-    $controller = new DefaultController();
-    $controller->defaultPage();
+    echo 'Inicio';
 });
 
 $router->get('/login', function() {
