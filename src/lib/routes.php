@@ -1,4 +1,5 @@
 <?php
+use Jose\ProyectoMelgar\controllers\DefaultController;
 use Jose\ProyectoMelgar\controllers\SignupController;
 use Jose\ProyectoMelgar\controllers\LoginController;
 use Jose\ProyectoMelgar\controllers\HomeController;
@@ -16,7 +17,8 @@ $dotenv->safeLoad();
  */
 
 $router->get('/', function() {
-    echo 'inicio';
+    $controller = new DefaultController();
+    $controller->defaultPage();
 });
 
 $router->get('/login', function() {

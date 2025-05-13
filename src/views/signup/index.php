@@ -32,7 +32,7 @@
                 <input type="text" class="form-control" id="username" name="username" placeholder="Fecha de Nacimiento del Usuario" required>
             </div>
             <div class="mb-3">
-                <a href="/instagram/login" class="link-primary">¿Ya tienes una cuenta? Entra aquí</a>
+                <a href="/ProyectoMelgar/login" class="link-primary">¿Ya tienes una cuenta? Entra aquí</a>
             </div>
             <button type="submit" class="btn btn-primary">Crear cuenta</button>
         </form>
