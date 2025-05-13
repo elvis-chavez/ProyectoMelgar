@@ -17,7 +17,7 @@
     <div class="container">
         <h1>Usuario <?php echo $this->d['user']->getUsername(); ?></h1>
         <h2>Lista de Roles</h2>
-        <a href="/ProyectoMelgar/role/form" class="btn btn-primary">Ingresar nuevo Proveedor al Sistema</a>
+        <a href="/ProyectoMelgar/role/form" class="btn btn-primary">Ingresar nuevo Rol al Sistema</a>
         
         <div class="">
             <table class="table table-striped">
