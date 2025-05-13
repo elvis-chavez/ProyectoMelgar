@@ -15,11 +15,12 @@ class Role extends Model {
         parent::__construct();
     }
 
-    public static function getAll() {
+    public function getAll() {
         $roles = [];
+
         try {
             $db = new Database();
-            $query = $db->connect()->prepare("SELECT * FROM roles");
+            $query = $this->prepare("SELECT * FROM roles");
             $query->execute();
 
             while ($r = $query->fetch(PDO::FETCH_ASSOC)) {
