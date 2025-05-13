@@ -124,7 +124,7 @@ $router->post('/provider/update', function() {
 });
 
 // Rutas para el CRUD de roles
-$router->get('/provider', function() {
+$router->get('/role', function() {
     $user = unserialize($_SESSION['user']);
     $controller = new RoleController($user);
     $controller->getRoles();
