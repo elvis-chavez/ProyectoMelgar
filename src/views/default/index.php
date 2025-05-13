@@ -15,7 +15,7 @@
             <a href="/ProyectoMelgar/login" class="btn btn-primary">¿Ya tienes una cuenta? Entra aquí</a>
         </div>
         <div class="mb-3">
-            <a href="/ProyectoMelgar/signup" class="btn btn--primary">¿Todavía no tienes una cuenta? Crea una nueva aquí</a>
+            <a href="/ProyectoMelgar/signup" class="btn btn-primary">¿Todavía no tienes una cuenta? Crea una nueva aquí</a>
         </div>
     </div>
 
