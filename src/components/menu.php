@@ -11,7 +11,7 @@
                     <a class="nav-link active" aria-current="page" href="/instagram/home">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/instagram/profile">Profile</a>
+                    <a class="nav-link" href="/ProyectoMelgar/role">Roles</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/ProyectoMelgar/logout">Logout</a>
