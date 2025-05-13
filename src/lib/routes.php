@@ -5,6 +5,7 @@ use Jose\ProyectoMelgar\controllers\LoginController;
 use Jose\ProyectoMelgar\controllers\HomeController;
 use Jose\ProyectoMelgar\controllers\ProviderController;
 use Jose\ProyectoMelgar\controllers\UserController;
+use Jose\ProyectoMelgar\controllers\RoleController;
 
 $router = new \Bramus\Router\Router();
 session_start();
@@ -120,6 +121,37 @@ $router->post('/provider/update', function() {
     $user = unserialize($_SESSION['user']);
     $controller = new ProviderController($user);
     $controller->updateProvider();
+});
+
+// Rutas para el CRUD de roles
+$router->get('/provider', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new RoleController($user);
+    $controller->getRoles();
+});
+
+$router->get('/role/form', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new RoleController($user);
+    $controller->getForm();
+});
+
+$router->post('/role/register', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new RoleController($user);
+    $controller->createRole();
+});
+
+$router->get('/role/edit/{id}', function($id) {
+    $user = unserialize($_SESSION['user']);
+    $controller = new RoleController($user);
+    $controller->editForm($id);
+});
+
+$router->post('/role/update', function() {
+    $user = unserialize($_SESSION['user']);
+    $controller = new RoleController($user);
+    $controller->updateRole();
 });
 
 $router->run();
